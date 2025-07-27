@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css">
+
+<body>
+    <h1>my task board</h1>
+    <div id="newNoteDiv">
+        <form id="newNoteForm" onsubmit="addNote(event)">
+            <input id="noteData" type="text" placeholder="Note Data" required>           
+            <input type="date" id="targetDate" placeholder="Target Date" required>     
+            <input type="time" id="targetTime" placeholder="Target Time" required>  
+            <button id="sub" type="submit">add Note/mission</button>
+            <button id="res" onclick="cleanForm()">reset form</button>
+         </form>
+    </div>
+    <div id="NoteList">
+        
+
+    </div>
+</body>
+</html>

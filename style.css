@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+html, body {
+    overflow-x: hidden;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+* {
+    max-width: 100%;
+}
+.new-note {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    opacity: 1;
+}
+#newNoteForm{
+    background-image: url(formbg.jpg);
+    width: 400px;
+    height: 200px;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+#newNoteForm input {
+    width: 85%;
+    max-width: 300px;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.9);
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+body{
+    background-image: url(tile.jpg);
+}
+h1{
+    font-family:'Roboto',sans-serif;
+    text-align: center;
+}
+#newNoteDiv{
+    display: grid;
+    place-items: center;
+}
+.noteView{
+    padding: 10px;
+    text-align: left;
+    background-image: url(notebg.png);
+    width: 170px;
+    height: 213px;
+    background-size: cover;
+}
+#NoteList{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+.text {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    word-wrap: break-word;
+    height: 70%;
+    width: 90%;
+    margin: 5px 0;
+}
+.buttonDiv{
+    text-align: right;
+    height: 20px;
+    margin: 5px;
+    width: 80%;
+}
+.deleteButton {
+    opacity: 0%;
+    
+}
+
+.noteView:hover .deleteButton{
+    opacity: 100;
+}
+
+#newNoteForm input::placeholder {
+    color: #888;
+    font-size: 12px;
+}
+
+
+#newNoteForm button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#newNoteForm button[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#newNoteForm button[type="submit"]:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+#newNoteForm button[onclick] {
+    background: #f44336;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#newNoteForm button[onclick]:hover {
+    background: #da190b;
+    transform: translateY(-1px);
+}
+
+
+@media screen and (max-width: 480px) {
+    #NoteList {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        gap: 3px;
+        padding: 3px;
+    }
+    
+    .noteView {
+        width: 80%;
+        height: 190px;
+        font-size: 12px;
+        min-width: none;
+    }
+    
+    .text {
+        font-size: 11px;
+    }
+    
+    .date-time {
+        font-size: 10px;
+    }
+    .deleteButton {
+    opacity: 100%;
+    
+}
+}
